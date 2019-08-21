@@ -28,7 +28,7 @@ import com.rabobank.transaction.validator.RbFailedTransactionValidator;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class RbFailedTransactionUnitTestCases {
+public class RbFailedTransactionTestCases {
 
 	private static final List<CustomerTransaction> FileNotFoundException = null;
 
@@ -102,7 +102,7 @@ public class RbFailedTransactionUnitTestCases {
 		assertEquals(customerTransactionList, parser.parseCsv(csvResource.toString()));
 
 		when(parser.parseXml(xmlResource.toString())).thenReturn(customerTransactionList);
-		assertEquals(customerTransactionList, parser.parseXml(csvResource.toString()));
+		assertEquals(customerTransactionList, parser.parseXml(xmlResource.toString()));
 	}
 
 	@Test
